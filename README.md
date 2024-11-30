@@ -1,1 +1,39 @@
-IyBHaXRIdWIgTUNQIENvbmZpZ3VyYXRpb24gVGVzdAoKVGhpcyByZXBvc2l0b3J5IGRlbW9uc3RyYXRlcyB0aGUgc3VjY2Vzc2Z1bCBjb25maWd1cmF0aW9uIGFuZCB0ZXN0aW5nIG9mIEdpdEh1YiBpbnRlZ3JhdGlvbiB1c2luZyB0aGUgTW9kZWwgQ29udGV4dCBQcm90b2NvbCAoTUNQKSBzZXJ2ZXIuIFRoZSBtaWdyYXRpb24gZnJvbSBXaW5kb3dzIHRvIG1hY09TIGVudmlyb25tZW50IGhhcyBiZWVuIGNvbXBsZXRlZCBhbmQgdmVyaWZpZWQuCgojIyBDb25maWd1cmF0aW9uIFByb2Nlc3MKCjEuICoqRW52aXJvbm1lbnQgTWlncmF0aW9uKioKICAgLSBTdWNjZXNzZnVsbHkgbWlncmF0ZWQgZnJvbSBXaW5kb3dzIHRvIG1hY09TIGVudmlyb25tZW50CiAgIC0gVXBkYXRlZCBNQ1Agc2VydmVyIGNvbmZpZ3VyYXRpb24gcGF0aHMKICAgLSBDb25maWd1cmVkIG5wbSBnbG9iYWwgaW5zdGFsbGF0aW9uIHBhdGggZm9yIG1hY09TCgoyLiAqKlBhdGggQ29uZmlndXJhdGlvbioqCiAgIC0gVmVyaWZpZWQgbnBtIGdsb2JhbCBpbnN0YWxsYXRpb24gcGF0aDogYC9vcHQvaG9tZWJyZXdgCiAgIC0gSW5zdGFsbGVkIHJlcXVpcmVkIG5wbSBwYWNrYWdlOiBgQG1vZGVsY29udGV4dHByb3RvY29sL3NlcnZlci1naXRodWJgCiAgIC0gVXBkYXRlZCBzZXJ2ZXIgY29uZmlndXJhdGlvbiBmb3IgbWFjT1MgY29tcGF0aWJpbGl0eQoKMy4gKipUZXN0aW5nIFJlc3VsdHMqKgogICAtIFN1Y2Nlc3NmdWxseSBjb25uZWN0ZWQgdG8gR2l0SHViIEFQSQogICAtIFBlcmZvcm1lZCByZXBvc2l0b3J5IHNlYXJjaCBvcGVyYXRpb25zCiAgIC0gQ3JlYXRlZCB0ZXN0IHJlcG9zaXRvcnkKICAgLSBWZXJpZmllZCB0b2tlbiBwZXJtaXNzaW9ucyBhbmQgYWNjZXNzCgojIyBDdXJyZW50IENvbmZpZ3VyYXRpb24KCmBgYGpzb24KewogICJtY3BTZXJ2ZXJzIjogewogICAgImdpdGh1YiI6IHsKICAgICAgImNvbW1hbmQiOiAibm9kZSIsCiAgICAgICJhcmdzIjogWwogICAgICAgICIvb3B0L2hvbWVicmV3L2xpYi9ub2RlX21vZHVsZXMvQG1vZGVsY29udGV4dHByb3RvY29sL3NlcnZlci1naXRodWIvZGlzdC9pbmRleC5qcyIsCiAgICAgICAgIi0tZGVidWciCiAgICAgIF0sCiAgICAgICJlbnYiOiB7CiAgICAgICAgIkdJVEhVQl9QRVJTT05BTF9BQ0NFU1NfVE9LRU4iOiAiW1RPS0VOXSIKICAgICAgfQogICAgfQogIH0KfQ==
+# GitHub MCP Configuration Test
+
+This repository demonstrates the successful configuration and testing of GitHub integration using the Model Context Protocol (MCP) server. The migration from Windows to macOS environment has been completed and verified.
+
+## Configuration Process
+
+1. **Environment Migration**
+   - Successfully migrated from Windows to macOS environment
+   - Updated MCP server configuration paths
+   - Configured npm global installation path for macOS
+
+2. **Path Configuration**
+   - Verified npm global installation path: `/opt/homebrew`
+   - Installed required npm package: `@modelcontextprotocol/server-github`
+   - Updated server configuration for macOS compatibility
+
+3. **Testing Results**
+   - Successfully connected to GitHub API
+   - Performed repository search operations
+   - Created test repository
+   - Verified token permissions and access
+
+## Current Configuration
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "node",
+      "args": [
+        "/opt/homebrew/lib/node_modules/@modelcontextprotocol/server-github/dist/index.js",
+        "--debug"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "[TOKEN]"
+      }
+    }
+  }
+}
